@@ -1,71 +1,48 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 const RegistrationForm = () => {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const validateForm = () => {
-    let errors = {};
-    if (!formData.username) errors.username = "Username is required";
-    if (!formData.email) errors.email = "Email is required";
-    if (!formData.password) errors.password = "Password is required";
-    return errors;
-  };
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validateForm();
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-    } else {
-      console.log("Form Submitted:", formData);
-      setFormData({ username: "", email: "", password: "" });
-      setErrors({});
-    }
+    console.log("Form Submitted:", { username, email, password });
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex flex-col gap-3">
-      <input
-        type="text"
-        name="username"
-        placeholder="Username"
-        value={formData.username}
-        onChange={handleChange}
-        className="border p-2"
-      />
-      {errors.username && <p className="text-red-500">{errors.username}</p>}
+    <form onSubmit={handleSubmit}>
+      <label>
+        Username:
+        <input
+          type="text"
+          name="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+      </label>
 
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={formData.email}
-        onChange={handleChange}
-        className="border p-2"
-      />
-      {errors.email && <p className="text-red-500">{errors.email}</p>}
+      <label>
+        Email:
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </label>
 
-      <input
-        type="password"
-        name="password"
-        placeholder="Password"
-        value={formData.password}
-        onChange={handleChange}
-        className="border p-2"
-      />
-      {errors.password && <p className="text-red-500">{errors.password}</p>}
+      <label>
+        Password:
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+      </label>
 
-      <button type="submit" className="bg-blue-500 text-white p-2">Register</button>
+      <button type="submit">Register</button>
     </form>
   );
 };
