@@ -4,21 +4,21 @@ const AddRecipeForm = ({ onAddRecipe }) => {
   const [title, setTitle] = useState("");
   const [ingredients, setIngredients] = useState("");
   const [steps, setSteps] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validation: Ensure all fields are filled
     if (!title || !ingredients || !steps) {
-      setError("All fields are required.");
+      setErrors("All fields are required.");
       return;
     }
 
     // Validation: Ensure at least two ingredients
     const ingredientsArray = ingredients.split(",").map((item) => item.trim());
     if (ingredientsArray.length < 2) {
-      setError("Please include at least two ingredients.");
+      setErrors("Please include at least two ingredients.");
       return;
     }
 
@@ -39,13 +39,13 @@ const AddRecipeForm = ({ onAddRecipe }) => {
     setTitle("");
     setIngredients("");
     setSteps("");
-    setError("");
+    setErrors("");
   };
 
   return (
     <div className="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg">
       <h2 className="text-xl font-semibold mb-4">Add New Recipe</h2>
-      {error && <p className="text-red-500 mb-3">{error}</p>}
+      {errors && <p className="text-red-500 mb-3">{errors}</p>}
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
