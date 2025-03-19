@@ -16,7 +16,7 @@ const RecipeDetail = () => {
   }
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div className="max-w-3xl mx-auto p-6 shadow-md">
       <img
         src={recipe.image}
         alt={recipe.title}
