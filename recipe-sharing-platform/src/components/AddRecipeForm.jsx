@@ -11,7 +11,8 @@ const AddRecipeForm = ({ onAddRecipe }) => {
 
     // Validation: Ensure all fields are filled
     if (!title || !ingredients || !steps) {
-      setErrors("All fields are required.");
+    const validate = "All fields are required.";
+    setErrors(validate);
       return;
     }
 
