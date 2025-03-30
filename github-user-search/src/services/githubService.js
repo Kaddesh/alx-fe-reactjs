@@ -1,13 +1,13 @@
 import axios from "axios";
 
 const fetchUserData = async (username, location, minRepos, page = 1) => {
-  const baseUrl = "https://api.github.com/search/users";
+  const baseUrl = "https://api.github.com/search/users?q";
   let searchQuery = `${username}`;
 
   // Add location filter if provided
   if (location) searchQuery += ` location:${location}`;
 
-  const URL = `${baseUrl}?q=${encodeURIComponent(searchQuery)}&page=${page}&per_page=30`;
+  const URL = `${baseUrl}=${encodeURIComponent(searchQuery)}&page=${page}&per_page=30`;
 
   try {
     const response = await axios.get(URL, {
