@@ -28,7 +28,7 @@ const Search = () => {
       setUsers(data.items);
       setTotalPages(Math.ceil(data.total_count / 30));
     } catch (err) {
-      setError("No users found with the given criteria.");
+      setError("Looks like we cant find the user");
       setUsers([]);
     } finally {
       setLoading(false);
