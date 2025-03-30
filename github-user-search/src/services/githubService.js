@@ -18,7 +18,7 @@ const fetchUserData = async (username, location, minRepos, page = 1) => {
     });
 
     const users = response.data.items;
-    console.log("api data:", users)
+   
 
     // Fetch additional details (public_repos) for each user
     const userDetails = await Promise.all(
@@ -33,7 +33,7 @@ const fetchUserData = async (username, location, minRepos, page = 1) => {
       })
     );
 
-    console.log("Fetched User Details:", userDetails); // Console log user details
+    
     // Apply minimum repositories filter
     const filteredUsers = minRepos
       ? userDetails.filter((user) => user.public_repos >= minRepos)
