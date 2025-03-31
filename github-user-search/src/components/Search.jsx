@@ -156,7 +156,7 @@ const Search = () => {
             href="https://docs.github.com/en/github/site-policy/github-terms-of-service"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className="hover:underline text-blue-600 text-xs"
           >
             Terms
           </a>
@@ -164,7 +164,7 @@ const Search = () => {
             href="https://github.com/privacy"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className="hover:underline text-blue-600 text-xs"
           >
             Privacy
           </a>
@@ -172,7 +172,7 @@ const Search = () => {
             href="https://github.com/security"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className="hover:underline text-blue-600 text-xs"
           >
             Security
           </a>
@@ -180,7 +180,7 @@ const Search = () => {
             href="https://support.github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:underline"
+            className="hover:underline text-xs"
           >
             Contact GitHub
           </a>
