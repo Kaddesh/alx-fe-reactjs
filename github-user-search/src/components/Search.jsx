@@ -44,7 +44,7 @@ const Search = () => {
         rel="noopener noreferrer"
         className="text-black text-4xl"
       >
-        <FaGithub className="hover:text-gray-700 transition duration-300" />
+        <FaGithub className="hover:text-gray-700 transition duration-300 h-12 w-12" />
       </a>
 
       {/* Search Form */}
@@ -57,21 +57,24 @@ const Search = () => {
           placeholder="GitHub Username"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="border p-2 rounded-lg focus:outline-none"
+          className="border border-gray-300 placeholder:text-sm p-2 rounded-lg focus:border-green-700 focus:outline-none"
+
         />
         <input
           type="text"
           placeholder="Location (Optional)"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-          className="border p-2 rounded-lg focus:outline-none"
+          className="border border-gray-300 placeholder:text-sm p-2 rounded-lg focus:border-green-700 focus:outline-none"
+
         />
         <input
           type="number"
           placeholder="Minimum Repositories (Optional)"
           value={minRepos}
           onChange={(e) => setMinRepos(e.target.value)}
-          className="border p-2 rounded-lg focus:outline-none"
+          className="border border-gray-300 placeholder:text-sm p-2 rounded-lg focus:border-green-700 focus:outline-none"
+
         />
 
         {/* Green Search Button */}
